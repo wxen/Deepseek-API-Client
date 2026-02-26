@@ -8,7 +8,7 @@
 Deepseek-API-Client/
 ├── for-macos/          # macOS 版本
 ├── for-windows/        # Windows 版本
-├── for-linux/          # Linux (Ubuntu) 版本 (开发中)
+├── for-linux/          # Linux (Ubuntu) 版本
 ├── LICENSE             # 许可证文件
 └── README.md           # 本说明文档
 ```
@@ -74,7 +74,27 @@ python src\cli_main.py
 
 ### Linux (Ubuntu) 版本
 
-进入 `for-linux` 目录使用。此版本正在开发中，敬请期待！
+Linux 版本基于与 macOS/Windows 相同的 Python 源码实现，主要通过 Tkinter 提供 GUI 界面，无需额外原生编译。
+
+#### 安装依赖
+```bash
+# 在项目根目录（包含 src/ 的目录）下执行
+pip3 install -r requirements.txt
+```
+
+#### 运行方式
+
+**GUI 模式：**
+```bash
+python3 src/gui_main.py
+```
+
+**CLI 模式：**
+```bash
+python3 src/cli_main.py
+```
+
+如需仅查看平台说明，可进入 `for-linux` 目录阅读 `README.md`。
 
 ---
 
@@ -107,5 +127,7 @@ python src\cli_main.py
 欢迎提交 Issue 和 Pull Request 来改进这个项目！
 
 ## 注意
+
+本项目仅供学习和研究使用，请遵守 Deepseek API 的使用条款和相关法律法规。
 
 本项目仅供学习和研究使用，请遵守 Deepseek API 的使用条款和相关法律法规和相关法律法规。
