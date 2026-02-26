@@ -81,8 +81,21 @@ class DeepSeekClient:
     
     def create_session_panel(self):
         """创建会话管理面板"""
-        # 会话标题
-        ttk.Label(self.session_frame, text="会话管理", font=("SimHei", 12, "bold")).pack(pady=10)
+        # 会话标题 - 尝试兼容常见中文字体（Linux/macOS/Windows）
+        try:
+            # 优先使用常见的开源中文字体（如 Linux 上的 Noto Sans CJK）
+            ttk.Label(self.session_frame, text="会话管理", font=("Noto Sans CJK SC", 12, "bold")).pack(pady=10)
+        except Exception:
+            try:
+                # 退回到常见的中文黑体字体
+                ttk.Label(self.session_frame, text="会话管理", font=("SimHei", 12, "bold")).pack(pady=10)
+            except Exception:
+                try:
+                    # Windows 上常见的中文字体
+                    ttk.Label(self.session_frame, text="会话管理", font=("Microsoft YaHei", 12, "bold")).pack(pady=10)
+                except Exception:
+                    # 最后回退到通用英文字体，确保界面可用
+                    ttk.Label(self.session_frame, text="会话管理", font=("Arial", 12, "bold")).pack(pady=10)
         
         # 会话列表
         self.session_listbox = tk.Listbox(self.session_frame, height=15)
