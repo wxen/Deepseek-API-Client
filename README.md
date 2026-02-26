@@ -129,5 +129,3 @@ python3 src/cli_main.py
 ## 注意
 
 本项目仅供学习和研究使用，请遵守 Deepseek API 的使用条款和相关法律法规。
-
-本项目仅供学习和研究使用，请遵守 Deepseek API 的使用条款和相关法律法规和相关法律法规。
